@@ -3,9 +3,9 @@ import HeroSection from './HeroSection';
 
 const HomePageComponent: React.FC = () => {
   return (
-      <>
-        <HeroSection />
-      </>
+    <>
+      <HeroSection />
+    </>
   );
 };
 

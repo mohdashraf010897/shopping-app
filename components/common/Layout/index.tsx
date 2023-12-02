@@ -1,17 +1,17 @@
 import React from 'react';
-import Navbar from '../Navbar';
+import Header from '../Header';
 import Footer from '../Footer';
 
 type LayoutProps = {
   children: React.ReactNode;
 };
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <Header />
       <main className={`${inter.className}`}>{children}</main>
       <Footer />
     </>
