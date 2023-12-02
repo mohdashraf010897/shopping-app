@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FooterProps } from '@/types/components/footer';
 
-const Footer: React.FC = () => {
+const Footer: React.FC<FooterProps> = ({ categories }) => {
   return (
     <footer className="bg-gray-100 py-16 px-4">
       <div className="max-w-6xl mx-auto flex flex-wrap justify-between">
@@ -10,21 +11,13 @@ const Footer: React.FC = () => {
         <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
           <h6 className="text-lg font-semibold text-gray-800">Categories</h6>
           <ul className="mt-4 space-y-2">
-            {/* Mock Category List Items */}
-            <li>
-              <Link
-                className="text-gray-800 hover:text-green-500"
-                href="/category/vegetables-fruits"
-              >
-                Vegetables & Fruits
-              </Link>
-            </li>
-            <li>
-              <Link className="text-gray-800 hover:text-green-500" href="/category/breakfast-food">
-                Breakfast & Instant Food
-              </Link>
-            </li>
-            {/* ... more items */}
+            {categories.map(({ title, id }) => (
+              <li key={id}>
+                <Link className="text-gray-800 hover:text-green-500" href={`/category/${title}`}>
+                  {title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

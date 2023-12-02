@@ -1,15 +1,19 @@
-import { DataProvider } from '@/components/common/DataProvider';
 import { fetchCategories, fetchProducts, fetchReviews } from '@/utils/api';
 import HomePageComponent from '@/components/pages/home';
 
 import { HomePageProps } from '@/types/pages/homepage';
 import { GetServerSideProps } from 'next';
+import { GlobalDataProvider } from '@/components/common/GlobalDataProvider';
 
-function HomePage({ products, categories, reviews }: HomePageProps) {
+function HomePage(props: HomePageProps) {
   return (
-    <DataProvider initialData={{ products, categories, reviews }}>
+    <GlobalDataProvider
+      initialData={{
+        ...props,
+      }}
+    >
       <HomePageComponent />
-    </DataProvider>
+    </GlobalDataProvider>
   );
 }
 

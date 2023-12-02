@@ -1,13 +1,14 @@
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { Category, Product, ProductReview } from '../dataSource';
 
 export type ContextDataType = {
   categories?: Category[];
   products?: Product[];
   reviews?: ProductReview[];
+  setData?: Dispatch<SetStateAction<ContextDataType | null>>;
 };
 
-export type DataProviderProps = {
+export type GlobalDataProviderProps = {
   children: ReactNode;
-  initialData: ContextDataType;
+  initialData?: ContextDataType | null;
 };

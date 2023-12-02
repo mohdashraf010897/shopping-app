@@ -1,12 +1,9 @@
 /* eslint-disable max-len */
-import React, { useContext } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { DataContext } from '@/components/common/DataProvider';
 
 const HeroSection: React.FC = () => {
-  const data = useContext(DataContext);
-  console.log('🚀', data);
   return (
     <section className="relative bg-white px-4 py-8 mt-8">
       <div className="relative min-h-[538px] rounded-md overflow-hidden">
