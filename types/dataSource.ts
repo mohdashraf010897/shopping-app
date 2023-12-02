@@ -7,6 +7,7 @@ export interface MenuItem {
 export type Category = {
   id: string;
   title: string;
+  imageURL?: string;
 };
 
 export type Product = {

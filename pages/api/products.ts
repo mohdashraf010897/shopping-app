@@ -1,13 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { products } from '@/constants/data';
-import { Product } from '@/types/dataSource';
+import { ProductsDataType } from '@/types/api/products';
 
-type Data = {
-  products: Product[];
-};
-
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<ProductsDataType>) {
   const categoryId = req.query.categoryId;
   const filteredProducts = categoryId
     ? products.filter(product => product.categoryId === categoryId)

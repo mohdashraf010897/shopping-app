@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // This file serves as a mock database,
 // providing static data for categories, products, and reviews.
 
@@ -7,30 +8,38 @@ export const categories: Category[] = [
   {
     id: 'cat1',
     title: 'Dairy, Bread & Eggs',
+    imageURL: 'https://transvelo.github.io/freshcart/assets/images/category-dairy-bread-eggs.jpeg',
   },
   {
     id: 'cat2',
     title: 'Snacks & Munchies',
+    imageURL: 'https://transvelo.github.io/freshcart/assets/images/category-snack-munchies.jpeg',
   },
   {
     id: 'cat3',
     title: 'Fruits & Vegetables',
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-17-600x600.jpeg',
   },
   {
     id: 'cat4',
     title: 'Cold Drinks & Juices',
+    imageURL: 'https://transvelo.github.io/freshcart/assets/images/category-tea-coffee-drinks.jpeg',
   },
   {
     id: 'cat5',
     title: 'Breakfast & Instant Food',
+    imageURL: 'https://transvelo.github.io/freshcart/assets/images/category-instant-food.jpeg',
   },
   {
     id: 'cat6',
     title: 'Bakery & Biscuits',
+    imageURL: 'https://transvelo.github.io/freshcart/assets/images/category-bakery-biscuits.jpeg',
   },
   {
     id: 'cat7',
     title: 'Chicken, Meat & Fish',
+    // Add imageURL here
   },
 ];
 
