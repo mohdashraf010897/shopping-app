@@ -1,6 +1,22 @@
+import { PageDataProvider } from '@/components/contextProviders/PageDataProvider';
+import ProductDetailPagePageComponent from '@/components/pages/productDetailPage';
 import { ProductPageProps } from '@/types/pages/productPage';
 import { fetchProductBySlug, fetchProducts } from '@/utils/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
+
+/*
+Using SSG for product details. 
+getStaticPaths fetches all product slugs for pre-rendering.
+getStaticProps fetches individual product data. 
+
+Benefits: 
+1. Fast load times (pre-rendered HTML)
+2. Good for SEO (content ready in HTML)
+3. Reliable and scalable (pages served from CDN)
+
+If product data changes, 'revalidate' in getStaticProps triggers a rebuild. 
+Ideal for many products with infrequent changes.
+*/
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const products = await fetchProducts();
@@ -13,7 +29,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log('🚀 ~ file: [slug].tsx:16 ~ constgetStaticProps:GetStaticProps= ~ params:', params);
   const product = await fetchProductBySlug(params?.slug as string);
 
   return {
@@ -29,12 +44,13 @@ export default function ProductPage(props: ProductPageProps) {
     return null;
   }
 
-  console.log('🚀 ~ file: [slug].tsx:27 ~ ProductPage ~ product:', product);
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <img src={product.imageURL} alt={product.name} />
-      <p>{product.discountedPrice ?? product.price}</p>
-    </div>
+    <PageDataProvider
+      initialData={{
+        product,
+      }}
+    >
+      <ProductDetailPagePageComponent />
+    </PageDataProvider>
   );
 }

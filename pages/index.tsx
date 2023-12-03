@@ -3,17 +3,17 @@ import HomePageComponent from '@/components/pages/home';
 
 import { HomePageProps } from '@/types/pages/homepage';
 import { GetServerSideProps } from 'next';
-import { GlobalDataProvider } from '@/components/contextProviders/GlobalDataProvider';
+import { PageDataProvider } from '@/components/contextProviders/PageDataProvider';
 
 function HomePage(props: HomePageProps) {
   return (
-    <GlobalDataProvider
+    <PageDataProvider
       initialData={{
         ...props,
       }}
     >
       <HomePageComponent />
-    </GlobalDataProvider>
+    </PageDataProvider>
   );
 }
 

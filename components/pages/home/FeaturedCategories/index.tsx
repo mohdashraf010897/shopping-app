@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { useGlobalDataProvider } from '@/utils/hooks/useGlobalDataProviderContext';
+import { usePageDataProvider } from '@/utils/hooks/usePageDataProviderContext';
 import FeaturedCard from './FeaturedCard';
 
 const FeaturedCategories: React.FC = () => {
-  const { categories } = useGlobalDataProvider();
+  const { categories } = usePageDataProvider();
 
   if (!categories) {
     return null;

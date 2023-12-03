@@ -5,10 +5,11 @@ export type ContextDataType = {
   categories?: Category[];
   products?: Product[];
   reviews?: ProductReview[];
+  product?: Product;
   setData?: Dispatch<SetStateAction<ContextDataType | null>>;
 };
 
-export type GlobalDataProviderProps = {
+export type PageDataProviderProps = {
   children: ReactNode;
   initialData?: ContextDataType | null;
 };

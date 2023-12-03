@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { useGlobalDataProvider } from '@/utils/hooks/useGlobalDataProviderContext';
+import { usePageDataProvider } from '@/utils/hooks/usePageDataProviderContext';
 import ProductCard from './ProductCard';
 
 const ProductsList: React.FC = () => {
-  const { products } = useGlobalDataProvider();
+  const { products } = usePageDataProvider();
 
   if (!products) {
     return null;
