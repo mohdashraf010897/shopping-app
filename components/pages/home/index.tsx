@@ -5,11 +5,11 @@ import ProductsList from './ProductsList';
 
 const HomePageComponent: React.FC = () => {
   return (
-    <>
+    <div className="mb-16">
       <HeroSection />
       <FeaturedCategories />
       <ProductsList />
-    </>
+    </div>
   );
 };
 

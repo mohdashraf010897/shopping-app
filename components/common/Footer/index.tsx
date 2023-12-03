@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FooterProps } from '@/types/components/footer';
+import { fetchCategories } from '@/utils/api';
+import { Category } from '@/types/dataSource';
 
-const Footer: React.FC<FooterProps> = ({ categories }) => {
+const Footer: React.FC<FooterProps> = ({ categories: propCategories }) => {
+  const [categories, setCategories] = useState(propCategories);
+
+  useEffect(() => {
+    if (!propCategories || propCategories.length === 0) {
+      fetchCategories().then(res => setCategories(res as Category[]));
+    }
+  }, [propCategories]);
+
   return (
     <footer className="bg-gray-100 py-16 px-4">
       <div className="max-w-6xl mx-auto flex flex-wrap justify-between">
