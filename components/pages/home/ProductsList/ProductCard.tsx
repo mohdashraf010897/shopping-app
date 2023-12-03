@@ -20,6 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   id,
 }) => {
   const { addToCart, cart } = usePersistorProvider();
+
   return (
     <li
       className="relative block hover:shadow-md p-4 border border-gray-200 rounded-lg transition-all duration-300 ease-in-out cursor-pointer hover:border-green-500"
@@ -37,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <Link
           aria-label={`Link to ${name}`}
           className="block transition-all duration-300 ease-in-out"
-          href={`/products/${slug}`}
+          href={`/product/${slug}`}
         >
           <div className="mb-3">
             <Image
@@ -81,11 +82,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <button
             className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
             onClick={() => {
-              if (!cart[id]) addToCart(id);
-              else {
-                console.log('slide overlay menu from right of screen');
+              if (!cart[id]) {
+                addToCart(id);
+              } else {
+                // TODO: do something
               }
             }}
+            role={'button'}
           >
             <AddIcon color="#fff" />
             {cart[id] ? 'View Cart' : 'Add to cart'}

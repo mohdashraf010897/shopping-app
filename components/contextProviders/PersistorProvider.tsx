@@ -14,7 +14,6 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
   useEffect(() => {
     setData(prevData => {
       const sessionData = sessionStorage.getItem('data');
-      console.log('🚀 ~ file: PersistorProvider.tsx:17 ~ useEffect ~ sessionData:', sessionData);
       if (sessionData) {
         const parsedData = JSON.parse(sessionData);
         return { ...prevData, ...parsedData };
