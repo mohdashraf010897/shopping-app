@@ -4,28 +4,18 @@ import React from 'react';
 import Image from 'next/image';
 import StarRating from '@/components/common/StarRating';
 import AddIcon from '@/components/common/icons/AddIcon';
-
-export type Product = {
-  id: string;
-  name: string;
-  categoryId: string;
-  price: number;
-  discountedPrice?: number;
-  sale: boolean;
-  rating: number;
-  imageURL: string;
-};
+import { Product } from '@/types/dataSource';
 
 interface ProductCardProps extends Product {}
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  id,
   name,
   price,
   discountedPrice,
   sale,
   rating,
   imageURL,
+  slug,
 }) => {
   return (
     <li
@@ -44,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <Link
           aria-label={`Link to ${name}`}
           className="block transition-all duration-300 ease-in-out"
-          href={`/products/${id}`}
+          href={`/products/${slug}`}
         >
           <div className="mb-3">
             <Image
@@ -92,13 +82,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <AddIcon color="#fff" />
             Add to cart
           </button>
-          <Link
-            aria-label={`Add ${name} to wishlist`}
-            className="text-gray-600 hover:text-red-500 transition-all duration-300 ease-in-out"
-            href={`/add-to-wishlist/${id}`}
-          >
-            <i className="fa fa-heart-o"></i>
-          </Link>
         </div>
       </div>
     </li>

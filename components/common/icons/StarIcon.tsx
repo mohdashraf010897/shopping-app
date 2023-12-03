@@ -11,8 +11,8 @@ const Star: React.FC<StarProps> = ({ filled = false }) => {
 
   return (
     <svg
-      width="24"
-      height="24"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill={fillColor}
       stroke={strokeColor}

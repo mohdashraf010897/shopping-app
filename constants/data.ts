@@ -47,6 +47,7 @@ export const products: Product[] = [
   {
     id: 'prod1',
     name: 'Amul Butter – 500 g',
+    slug: 'amul-butter-500-g',
     categoryId: 'cat1',
     price: 199,
     sale: false,
@@ -57,6 +58,7 @@ export const products: Product[] = [
   {
     id: 'prod2',
     name: 'Beatroot',
+    slug: 'beatroot',
     categoryId: 'cat3',
     price: 40,
     sale: false,
@@ -67,6 +69,7 @@ export const products: Product[] = [
   {
     id: 'prod3',
     name: 'Blueberry Greek Yogurt',
+    slug: 'blueberry-greek-yogurt',
     categoryId: 'cat1',
     price: 50,
     sale: false,
@@ -77,6 +80,7 @@ export const products: Product[] = [
   {
     id: 'prod4',
     name: 'Coca Cola',
+    slug: 'coca-cola',
     categoryId: 'cat4',
     price: 45,
     sale: true,
@@ -87,6 +91,7 @@ export const products: Product[] = [
   {
     id: 'prod5',
     name: 'Red Apple',
+    slug: 'red-apple',
     categoryId: 'cat3',
     price: 30,
     sale: false,
@@ -97,6 +102,7 @@ export const products: Product[] = [
   {
     id: 'prod6',
     name: 'Almond Milk',
+    slug: 'almond-milk',
     categoryId: 'cat4',
     price: 200,
     sale: false,
@@ -107,6 +113,7 @@ export const products: Product[] = [
   {
     id: 'prod7',
     name: 'Oatmeal Cookies',
+    slug: 'oatmeal-cookies',
     categoryId: 'cat6',
     price: 120,
     discountedPrice: 90,

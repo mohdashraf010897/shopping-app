@@ -19,6 +19,7 @@ export type Product = {
   sale: boolean;
   rating: number;
   imageURL: string;
+  slug: string;
 };
 
 export type Review = {
