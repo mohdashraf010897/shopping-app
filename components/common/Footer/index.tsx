@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ categories: propCategories }) => {
     <footer className="bg-gray-100 py-16 px-4">
       <div className="max-w-6xl mx-auto flex flex-wrap justify-between">
         {/* Categories Section */}
-        <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
+        <div className="w-full md:w-1/3 mb-8 lg:mb-0">
           <h6 className="text-lg font-semibold text-gray-800">Categories</h6>
           <ul className="mt-4 space-y-2">
             {categories.map(({ title, id }) => (
@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ categories: propCategories }) => {
         </div>
 
         {/* Get to Know Us Section */}
-        <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
+        <div className="w-full md:w-1/3 mb-8 lg:mb-0">
           <h6 className="text-lg font-semibold text-gray-800">Get to Know Us</h6>
           <ul className="mt-4 space-y-2">
             {/* Mock Info Links */}
@@ -51,7 +51,7 @@ const Footer: React.FC<FooterProps> = ({ categories: propCategories }) => {
         </div>
 
         {/* Become a Shopper Section */}
-        <div className="w-full lg:w-1/3">
+        <div className="w-full md:w-1/3">
           <h6 className="text-lg font-semibold text-gray-800">Become a Shopper</h6>
           <ul className="mt-4 space-y-2">
             {/* Mock Shopper Links */}

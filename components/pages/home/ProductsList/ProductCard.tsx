@@ -28,8 +28,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       aria-label={name}
     >
       {sale && (
-        <div className="w-[max-content] text-sm text-#43454b font-semibold absolute right-2 top-2 bg-white px-2 py-1 rounded border border-[#43454B] z-10 cursor-pointer m-0 p-[3.0625px]">
-          <span className="text-#43454b cursor-pointer inline font-inter text-[12.25px] font-semibold leading-[18.375px] list-none text-center uppercase">
+        <div className="w-[max-content] text-sm text-[#43454b] font-semibold absolute right-2 top-2 bg-white px-2 py-1 rounded border border-[#43454B] z-10 cursor-pointer m-0 p-[3.0625px]">
+          <span className="text-[#43454b] cursor-pointer inline font-inter text-[12.25px] font-semibold leading-[18.375px] list-none text-center uppercase">
             Sale
           </span>
         </div>

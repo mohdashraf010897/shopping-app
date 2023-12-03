@@ -1,7 +1,7 @@
 import { PageDataProvider } from '@/components/contextProviders/PageDataProvider';
 import ProductDetailPagePageComponent from '@/components/pages/productDetailPage';
 import { ProductPageProps } from '@/types/pages/productPage';
-import { fetchProductBySlug, fetchProducts } from '@/utils/api';
+import { fetchCategories, fetchProductBySlug, fetchProducts } from '@/utils/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 /*
@@ -31,14 +31,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const product = await fetchProductBySlug(params?.slug as string);
 
+  const categories = await fetchCategories();
+
   return {
-    props: { product },
+    props: { product, categories },
     revalidate: 1, // In seconds
   };
 };
 
 export default function ProductPage(props: ProductPageProps) {
-  const { product } = props;
+  const { product, categories } = props;
 
   if (!product) {
     return null;
@@ -48,6 +50,7 @@ export default function ProductPage(props: ProductPageProps) {
     <PageDataProvider
       initialData={{
         product,
+        categories,
       }}
     >
       <ProductDetailPagePageComponent />

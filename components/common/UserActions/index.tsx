@@ -8,7 +8,7 @@ import { usePersistorProvider } from '@/utils/hooks/useSessionProvider';
 const UserActions: React.FC = () => {
   const { cart } = usePersistorProvider();
   const totalCartItems = useMemo(() => {
-    return Object.keys(cart).length;
+    return Object.values(cart).reduce((acc, { itemsInCart }) => acc + itemsInCart, 0);
   }, [cart]);
 
   return (
@@ -30,7 +30,7 @@ const UserActions: React.FC = () => {
       <button className="relative flex items-center">
         <CartIconGrey />
         {/* eslint-disable-next-line max-len */}
-        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 py-0.5 inline-block w-[20px] h-[20px]">
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 py-0.5 inline-block min-w-[20px] h-[20px]">
           {totalCartItems}
         </span>
       </button>

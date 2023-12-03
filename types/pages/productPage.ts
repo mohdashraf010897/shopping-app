@@ -1,5 +1,6 @@
-import { Product } from '../dataSource';
+import { Category, Product } from '../dataSource';
 
 export interface ProductPageProps {
   product: Product;
+  categories: Category[];
 }
