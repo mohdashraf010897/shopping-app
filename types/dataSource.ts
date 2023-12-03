@@ -18,6 +18,7 @@ export type Product = {
   discountedPrice?: number;
   sale: boolean;
   rating: number;
+  imageURL: string;
 };
 
 export type Review = {

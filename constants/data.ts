@@ -51,6 +51,8 @@ export const products: Product[] = [
     price: 199,
     sale: false,
     rating: 4,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2022/10/product-img-7-1-600x600.jpeg',
   },
   {
     id: 'prod2',
@@ -59,32 +61,38 @@ export const products: Product[] = [
     price: 40,
     sale: false,
     rating: 5,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-19-600x600.jpeg',
   },
   {
     id: 'prod3',
     name: 'Blueberry Greek Yogurt',
     categoryId: 'cat1',
-    price: 150,
-    discountedPrice: 120,
-    sale: true,
-    rating: 3,
+    price: 50,
+    sale: false,
+    rating: 4,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-12-300x300.jpeg',
   },
   {
     id: 'prod4',
-    name: 'Whole Wheat Bread',
-    categoryId: 'cat1',
-    price: 60,
-    sale: false,
-    rating: 4,
+    name: 'Coca Cola',
+    categoryId: 'cat4',
+    price: 45,
+    sale: true,
+    rating: 3,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-13-300x300.jpeg',
   },
   {
     id: 'prod5',
-    name: 'Organic Eggs',
-    categoryId: 'cat1',
-    price: 80,
-    discountedPrice: 60,
-    sale: true,
+    name: 'Red Apple',
+    categoryId: 'cat3',
+    price: 30,
+    sale: false,
     rating: 5,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-15-600x600.jpeg',
   },
   {
     id: 'prod6',
@@ -93,6 +101,8 @@ export const products: Product[] = [
     price: 200,
     sale: false,
     rating: 4,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-17-300x300.jpeg',
   },
   {
     id: 'prod7',
@@ -102,6 +112,8 @@ export const products: Product[] = [
     discountedPrice: 90,
     sale: true,
     rating: 4,
+    imageURL:
+      'https://freshcart.madrasthemes.com/gutenberg/wp-content/uploads/2019/05/product-img-11-300x300.jpeg',
   },
   // More products...
 ];
