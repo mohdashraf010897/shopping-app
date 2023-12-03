@@ -3,7 +3,7 @@ import HomePageComponent from '@/components/pages/home';
 
 import { HomePageProps } from '@/types/pages/homepage';
 import { GetServerSideProps } from 'next';
-import { GlobalDataProvider } from '@/components/common/GlobalDataProvider';
+import { GlobalDataProvider } from '@/components/contextProviders/GlobalDataProvider';
 
 function HomePage(props: HomePageProps) {
   return (

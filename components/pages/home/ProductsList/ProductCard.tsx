@@ -5,6 +5,7 @@ import Image from 'next/image';
 import StarRating from '@/components/common/StarRating';
 import AddIcon from '@/components/common/icons/AddIcon';
 import { Product } from '@/types/dataSource';
+import { usePersistorProvider } from '@/utils/hooks/useSessionProvider';
 
 interface ProductCardProps extends Product {}
 
@@ -16,7 +17,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   rating,
   imageURL,
   slug,
+  id,
 }) => {
+  const { addToCart, cart } = usePersistorProvider();
   return (
     <li
       className="relative block hover:shadow-md p-4 border border-gray-200 rounded-lg transition-all duration-300 ease-in-out cursor-pointer hover:border-green-500"
@@ -77,10 +80,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="flex justify-between items-center transition-all duration-300 ease-in-out">
           <button
             className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
-            onClick={() => {}}
+            onClick={() => {
+              if (!cart[id]) addToCart(id);
+              else {
+                console.log('slide overlay menu from right of screen');
+              }
+            }}
           >
             <AddIcon color="#fff" />
-            Add to cart
+            {cart[id] ? 'View Cart' : 'Add to cart'}
           </button>
         </div>
       </div>

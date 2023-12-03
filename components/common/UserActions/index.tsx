@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import CartIconGrey from '../icons/CartIconGrey';
 import HeartIconGrey from '../icons/HeartIconGrey';
 import PersonIcon from '../icons/PersonIcon';
+import { usePersistorProvider } from '@/utils/hooks/useSessionProvider';
 
 const UserActions: React.FC = () => {
+  const { cart } = usePersistorProvider();
+  const totalCartItems = useMemo(() => {
+    return Object.keys(cart).length;
+  }, [cart]);
+
   return (
     <div className="flex justify-end items-center space-x-4">
       {/* Wishlist Link */}
@@ -24,8 +30,8 @@ const UserActions: React.FC = () => {
       <button className="relative flex items-center">
         <CartIconGrey />
         {/* eslint-disable-next-line max-len */}
-        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 py-0.5">
-          0
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 py-0.5 inline-block w-[20px] h-[20px]">
+          {totalCartItems}
         </span>
       </button>
     </div>

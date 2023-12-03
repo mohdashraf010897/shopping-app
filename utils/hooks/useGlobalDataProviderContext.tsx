@@ -1,4 +1,4 @@
-import { GlobalDataProviderContext } from '@/components/common/GlobalDataProvider';
+import { GlobalDataProviderContext } from '@/components/contextProviders/GlobalDataProvider';
 import React from 'react';
 
 export function useGlobalDataProvider() {
