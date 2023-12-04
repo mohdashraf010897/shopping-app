@@ -43,7 +43,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export default function ProductPage(props: ProductPageProps) {
   const { product, categories, products } = props;
-  console.log('🚀 ~ file: [slug].tsx:46 ~ ProductPage ~ products:', products);
 
   if (!product) {
     return null;
