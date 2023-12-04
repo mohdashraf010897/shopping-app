@@ -4,6 +4,7 @@ import Footer from '../Footer';
 
 import { Inter } from 'next/font/google';
 import { LayoutProps } from '@/types/components/layout';
+import CartView from '../CartView/CartView';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,6 +19,7 @@ const Layout: React.FC<LayoutProps> = ({
       {showHeader && <Header />}
       <main className={`${inter.className}`}>{children}</main>
       {showFooter && <Footer categories={categories ?? []} />}
+      <CartView />
     </>
   );
 };

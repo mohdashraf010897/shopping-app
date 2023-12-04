@@ -25,7 +25,7 @@ const SearchBar: React.FC = () => {
         required
         value={searchTerm}
         onChange={e => setSearchTerm(e.target.value)}
-        className="border border-gray-300 rounded-lg shadow-sm p-3 flex-grow transition ease-in-out duration-300 hover:bg-gray-200 focus:bg-white active:bg-gray-300 text-black pr-52"
+        className="border border-gray-300 rounded-lg shadow-sm p-3 flex-grow transition ease-in-out duration-300 hover:bg-gray-200 focus:bg-white active:bg-gray-300 text-black pr-[52px]"
       />
       <div className="overflow-hidden rounded-r-lg absolute right-0 top-0 bottom-0 border-l border-gray-300 flex items-center justify-center">
         <button

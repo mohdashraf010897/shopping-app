@@ -8,11 +8,19 @@ import {
 export const PersistorContext = createContext<PersistorContextType | undefined>(undefined);
 
 export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }) => {
-  const [data, setData] = useState<PersistorProviderDataType>({ cart: {} });
+  const [store, setStore] = useState<PersistorProviderDataType>({
+    cart: {},
+    cartDrawer: {
+      isOpen: false,
+    },
+    products: [],
+    categories: [],
+    reviews: [],
+  });
   const initialRender = useRef(true);
 
   useEffect(() => {
-    setData(prevData => {
+    setStore(prevData => {
       const sessionData = sessionStorage.getItem('data');
       if (sessionData) {
         const parsedData = JSON.parse(sessionData);
@@ -26,12 +34,12 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     if (initialRender.current) {
       initialRender.current = false;
     } else {
-      sessionStorage.setItem('data', JSON.stringify(data));
+      sessionStorage.setItem('data', JSON.stringify(store));
     }
-  }, [data]);
+  }, [store]);
 
   const addToCart = (productId: string, quantity?: number) => {
-    setData((prevData: PersistorProviderDataType) => ({
+    setStore((prevData: PersistorProviderDataType) => ({
       ...prevData,
       cart: {
         ...prevData.cart,
@@ -43,7 +51,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
   };
 
   const removeFromCart = (productId: string, quantity?: number) => {
-    setData((prevData: PersistorProviderDataType) => {
+    setStore((prevData: PersistorProviderDataType) => {
       const currentQuantity = prevData.cart[productId]?.itemsInCart || 0;
       const newQuantity = currentQuantity - (quantity ?? 1);
 
@@ -65,8 +73,34 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     });
   };
 
+  const toggleCartDrawer = () => {
+    setStore((prevData: PersistorProviderDataType) => ({
+      ...prevData,
+      cartDrawer: {
+        isOpen: !prevData.cartDrawer.isOpen,
+      },
+    }));
+  };
+
+  const addDataToStore = (data: Partial<PersistorProviderDataType>) => {
+    setStore(prevData => ({
+      ...prevData,
+      ...data,
+    }));
+  };
+
   return (
-    <PersistorContext.Provider value={{ cart: data.cart, addToCart, removeFromCart }}>
+    <PersistorContext.Provider
+      value={{
+        cart: store.cart,
+        addToCart,
+        removeFromCart,
+        toggleCartDrawer,
+        isCartDrawerOpen: store.cartDrawer.isOpen,
+        products: store.products,
+        addDataToStore,
+      }}
+    >
       {children}
     </PersistorContext.Provider>
   );
