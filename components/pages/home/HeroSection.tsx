@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
         <Image
           src="https://transvelo.github.io/freshcart/assets/images/slide-1.jpeg"
           alt=""
-          layout="fill"
+          fill
           style={{
             objectFit: 'cover',
             objectPosition: 'center',

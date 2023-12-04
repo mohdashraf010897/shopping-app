@@ -1,3 +1,4 @@
+// Importing required modules and types
 import React, { createContext, useState, useEffect, useRef } from 'react';
 import {
   PersistorContextType,
@@ -5,9 +6,12 @@ import {
   PersistorProviderProps,
 } from '@/types/components/sessionProvider';
 
+// Creating context for Persistor
 export const PersistorContext = createContext<PersistorContextType | undefined>(undefined);
 
+// PersistorProvider component
 export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }) => {
+  // State for store
   const [store, setStore] = useState<PersistorProviderDataType>({
     cart: {},
     cartDrawer: {
@@ -17,8 +21,10 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     categories: [],
     reviews: [],
   });
+  // Ref for initial render
   const initialRender = useRef(true);
 
+  // Effect to set store from session data
   useEffect(() => {
     setStore(prevData => {
       const sessionData = sessionStorage.getItem('data');
@@ -30,6 +36,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     });
   }, []);
 
+  // Effect to set session data from store
   useEffect(() => {
     if (initialRender.current) {
       initialRender.current = false;
@@ -38,6 +45,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     }
   }, [store]);
 
+  // Function to add to cart
   const addToCart = (productId: string, quantity?: number) => {
     setStore((prevData: PersistorProviderDataType) => ({
       ...prevData,
@@ -50,6 +58,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     }));
   };
 
+  // Function to remove from cart
   const removeFromCart = (productId: string, quantity?: number) => {
     setStore((prevData: PersistorProviderDataType) => {
       const currentQuantity = prevData.cart[productId]?.itemsInCart || 0;
@@ -73,6 +82,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     });
   };
 
+  // Function to toggle cart drawer
   const toggleCartDrawer = () => {
     setStore((prevData: PersistorProviderDataType) => ({
       ...prevData,
@@ -82,6 +92,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     }));
   };
 
+  // Function to add data to store
   const addDataToStore = (data: Partial<PersistorProviderDataType>) => {
     setStore(prevData => ({
       ...prevData,
@@ -89,6 +100,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     }));
   };
 
+  // Return PersistorContext Provider
   return (
     <PersistorContext.Provider
       value={{
