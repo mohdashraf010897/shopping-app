@@ -30,10 +30,6 @@ const SideDrawer: React.FC<SideDrawerProps> = ({
     ? 'opacity-50 ease-out duration-1000'
     : 'opacity-0 ease-in duration-1000 hidden';
 
-  if (!isOpen) {
-    return null;
-  }
-
   return (
     <>
       <div
