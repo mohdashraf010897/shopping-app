@@ -41,7 +41,7 @@ const CartView: React.FC = () => {
   return (
     <SideDrawer isOpen={isCartDrawerOpen} onClose={toggleCartDrawer} direction="right">
       <div className="block p-4 bg-white rounded-lg ">
-        <h2 className="flex justify-start gap-1 items-center mb-4 text-[#5C6C75] font-inter text-[20px] font-semibold leading-8 tracking-tighter ml-2">
+        <h2 className="flex justify-start gap-1 items-center mb-4 text-graybrand font-inter text-[20px] font-semibold leading-8 tracking-tighter ml-2">
           <span>Your cart</span>
           <span>({calculateTotalItemsInCart()} items)</span>
         </h2>

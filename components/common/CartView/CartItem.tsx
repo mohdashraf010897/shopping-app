@@ -27,7 +27,7 @@ const CartItem: React.FC<CartItemProps> = ({ product, quantity, onQuantityChange
       </td>
       <td className="col-span-1">
         <div className="flex flex-col">
-          <h3 className="text-[#001e2b] cursor-pointer font-inter text-[14px] font-semibold leading-[16.8px] mb-2 max-w-[160px] transition-all duration-300 ease-in-out break-words overflow-auto">
+          <h3 className="text-blackbrand cursor-pointer font-inter text-[14px] font-semibold leading-[16.8px] mb-2 max-w-[160px] transition-all duration-300 ease-in-out break-words overflow-auto">
             {product.name}
           </h3>
           <div className="text-sm text-gray-500 flex flex-col">
@@ -45,7 +45,7 @@ const CartItem: React.FC<CartItemProps> = ({ product, quantity, onQuantityChange
           )}
           <div className="my-2 text-sm text-gray-500">
             <ul>
-              <li className="inline-block text-[#5C6C75] font-inter text-[12px] font-semibold leading-[18px] list-none text-left">
+              <li className="inline-block text-graybrand font-inter text-[12px] font-semibold leading-[18px] list-none text-left">
                 <span>Vendor:</span>
                 <span>Global Vendor</span>
               </li>
@@ -62,7 +62,7 @@ const CartItem: React.FC<CartItemProps> = ({ product, quantity, onQuantityChange
         <div className="flex items-stretch">
           <button
             onClick={() => onQuantityChange(Math.max(1, quantity - 1))}
-            className="px-2 py-1 border border-[#ecf0ef] rounded-l bg-transparent text-[#5C6C75] hover:bg-gray-200 transition duration-300 ease-in-out"
+            className="px-2 py-1 border border-graylight rounded-l bg-transparent text-graybrand hover:bg-gray-200 transition duration-300 ease-in-out"
           >
             -
           </button>
@@ -75,11 +75,11 @@ const CartItem: React.FC<CartItemProps> = ({ product, quantity, onQuantityChange
                 onQuantityChange(Math.max(val, 1));
               }
             }}
-            className="w-12 text-center border-t border-b border-[#ecf0ef] rounded-none outline-none z-0 text-[#5C6C75]"
+            className="w-12 text-center border-t border-b border-graylight rounded-none outline-none z-0 text-graybrand"
           />
           <button
             onClick={() => onQuantityChange(quantity + 1)}
-            className="px-2 py-1 border border-[#ecf0ef] rounded-r bg-transparent text-[#5C6C75] transition duration-300 hover:bg-gray-200 ease-in-out"
+            className="px-2 py-1 border border-graylight rounded-r bg-transparent text-graybrand transition duration-300 hover:bg-gray-200 ease-in-out"
           >
             +
           </button>
@@ -87,7 +87,7 @@ const CartItem: React.FC<CartItemProps> = ({ product, quantity, onQuantityChange
       </td>
       <td className="col-span-1">
         <div className="flex flex-col justify-center h-[100%]">
-          <span className="inline-block text-[#001E2B] font-inter text-[14px] font-semibold leading-[21px] whitespace-pre-wrap break-all text-right w-[70px]">
+          <span className="inline-block text-blackbrand font-inter text-[14px] font-semibold leading-[21px] whitespace-pre-wrap break-all text-right w-[70px]">
             ${totalPrice}
           </span>
         </div>

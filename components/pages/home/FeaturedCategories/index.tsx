@@ -13,7 +13,7 @@ const FeaturedCategories: React.FC = () => {
   return (
     <section className="bg-white flex flex-col gap-6 m-6">
       <div>
-        <h2 className="text-[#001E2B] font-inter text-[24.496px] font-semibold leading-[29.3952px] tracking-[-0.48px]">
+        <h2 className="text-blackbrand font-inter text-[24.496px] font-semibold leading-[29.3952px] tracking-[-0.48px]">
           Featured Categories
         </h2>
       </div>

@@ -34,16 +34,16 @@ const HeroSection: React.FC = () => {
 
             {/* Text and Button */}
             <div className="text-left text-black">
-              <h2 className="text-[44.36px] font-[Inter, sans-serif] font-bold text-[#001E2B] leading-[53.232px] mb-[16px] break-words">
+              <h2 className="text-[44.36px] font-[Inter, sans-serif] font-bold text-blackbrand leading-[53.232px] mb-[16px] break-words">
                 SuperMarket For Fresh Grocery
               </h2>
-              <p className="text-lg mb-4 text-[#5c6c75] font-[Inter, sans-serif] text-[16.5564px] font-medium leading-[24.8345px] break-words">
+              <p className="text-lg mb-4 text-graybrand font-[Inter, sans-serif] text-[16.5564px] font-medium leading-[24.8345px] break-words">
                 Introduced a new model for online grocery shopping and convenient home delivery.
               </p>
               <div className="mt-4">
                 <Link
                   href="/shop"
-                  className="bg-[#001e2b] text-white rounded-md py-[9.92px] px-[19px] inline-block font-[Inter, sans-serif] text-[14px] font-regular leading-[21px] text-center transition-all duration-300 ease-in-out break-words"
+                  className="bg-blackbrand text-white rounded-md py-[9.92px] px-[19px] inline-block font-[Inter, sans-serif] text-[14px] font-regular leading-[21px] text-center transition-all duration-300 ease-in-out break-words"
                 >
                   Shop Now {'->'}
                 </Link>

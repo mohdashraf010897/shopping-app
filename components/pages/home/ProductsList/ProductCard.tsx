@@ -28,8 +28,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       aria-label={name}
     >
       {sale && (
-        <div className="w-[max-content] text-sm text-[#43454b] font-semibold absolute right-2 top-2 bg-white px-2 py-1 rounded border border-[#43454B] z-10 cursor-pointer m-0 p-[3.0625px]">
-          <span className="text-[#43454b] cursor-pointer inline font-inter text-[12.25px] font-semibold leading-[18.375px] list-none text-center uppercase">
+        <div className="w-[max-content] text-sm text-graymedium font-semibold absolute right-2 top-2 bg-white px-2 py-1 rounded border border-graymedium z-10 cursor-pointer m-0 p-[3.0625px]">
+          <span className="text-graymedium cursor-pointer inline font-inter text-[12.25px] font-semibold leading-[18.375px] list-none text-center uppercase">
             Sale
           </span>
         </div>
@@ -61,15 +61,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {discountedPrice ? (
             <>
               {' '}
-              <ins className="text-[#5C6C75] inline font-inter text-sm font-medium leading-[21px] list-none text-left no-underline mr-2 transition-all duration-300 ease-in-out">
+              <ins className="text-graybrand inline font-inter text-sm font-medium leading-[21px] list-none text-left no-underline mr-2 transition-all duration-300 ease-in-out">
                 ${discountedPrice}
               </ins>
-              <del className="text-[#5C6C75] inline font-inter text-sm font-medium leading-[21px] list-none text-left mr-2 transition-all duration-300 ease-in-out">
+              <del className="text-graybrand inline font-inter text-sm font-medium leading-[21px] list-none text-left mr-2 transition-all duration-300 ease-in-out">
                 ${price}
               </del>
             </>
           ) : (
-            <span className="text-[#5C6C75] inline font-inter text-sm font-medium leading-[21px] list-none text-left no-underline transition-all duration-300 ease-in-out">
+            <span className="text-graybrand inline font-inter text-sm font-medium leading-[21px] list-none text-left no-underline transition-all duration-300 ease-in-out">
               ${price}
             </span>
           )}

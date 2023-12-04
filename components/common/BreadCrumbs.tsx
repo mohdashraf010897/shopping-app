@@ -39,10 +39,10 @@ const Breadcrumbs: React.FC = () => {
         </li>
         {breadcrumbs.map(({ href, label, isLast }, index) => (
           <React.Fragment key={index}>
-            <li className="text-[#889397]">/</li>
+            <li className="text-tertiary">/</li>
             <li>
               {isLast ? (
-                <span className="text-[#889397]">{label}</span>
+                <span className="text-tertiary">{label}</span>
               ) : (
                 <Link
                   href={href}

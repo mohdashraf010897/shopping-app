@@ -45,35 +45,35 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
         )}
       </div>
       <div className="md:w-1/2 mt-4 md:mt-0 md:ml-6">
-        <div className="border-b border-[#ecf0ef] pb-6">
-          <h1 className="text-[#5C6C75] font-inter text-4xl font-bold mb-4">{name}</h1>
+        <div className="border-b border-graylight pb-6">
+          <h1 className="text-graybrand font-inter text-4xl font-bold mb-4">{name}</h1>
           <p className="mt-2">
             <StarRating currentRating={rating} />
           </p>
           <div className="mt-4">
             {discountedPrice ? (
               <>
-                <ins className="text-[#001E2B] inline font-inter text-lg font-bold leading-[31.5px] mr-4">
+                <ins className="text-blackbrand inline font-inter text-lg font-bold leading-[31.5px] mr-4">
                   ${discountedPrice}
                 </ins>
-                <del className="text-[#001E2B] inline font-inter text-lg font-bold leading-[31.5px] line-through">
+                <del className="text-blackbrand inline font-inter text-lg font-bold leading-[31.5px] line-through">
                   ${price}
                 </del>
               </>
             ) : (
-              <span className="text-[#001E2B] inline font-inter text-lg font-bold leading-[31.5px]">
+              <span className="text-blackbrand inline font-inter text-lg font-bold leading-[31.5px]">
                 ${price}
               </span>
             )}
           </div>
         </div>
-        <div className="border-b border-[#ecf0ef] pb-6">
+        <div className="border-b border-graylight pb-6">
           <div className="mt-4">
             <label className="mr-2">Quantity:</label>
             <div className="flex items-stretch">
               <button
                 onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                className="px-2 py-1 border border-[#ecf0ef] rounded-l bg-transparent text-[#5C6C75] hover:bg-gray-200 transition duration-300 ease-in-out"
+                className="px-2 py-1 border border-graylight rounded-l bg-transparent text-graybrand hover:bg-gray-200 transition duration-300 ease-in-out"
               >
                 -
               </button>
@@ -86,11 +86,11 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
                     setQuantity(Math.max(val, 1));
                   }
                 }}
-                className="w-12 text-center border-t border-b border-[#ecf0ef] rounded-none outline-none z-0 text-[#5C6C75]"
+                className="w-12 text-center border-t border-b border-graylight rounded-none outline-none z-0 text-graybrand"
               />
               <button
                 onClick={() => setQuantity(q => q + 1)}
-                className="px-2 py-1 border border-[#ecf0ef] rounded-r bg-transparent text-[#5C6C75] transition duration-300 hover:bg-gray-200 ease-in-out"
+                className="px-2 py-1 border border-graylight rounded-r bg-transparent text-graybrand transition duration-300 hover:bg-gray-200 ease-in-out"
               >
                 +
               </button>
@@ -115,7 +115,7 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
             </button>
           </div>
         </div>
-        <div className="mt-6 grid items-center grid-cols-2 grid-rows-auto overflow-hidden text-[#5C6C75] text-sm font-inter font-medium capitalize">
+        <div className="mt-6 grid items-center grid-cols-2 grid-rows-auto overflow-hidden text-graybrand text-sm font-inter font-medium capitalize">
           Category:{' '}
           <span>
             <Link
