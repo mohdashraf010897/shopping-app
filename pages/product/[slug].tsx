@@ -31,16 +31,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const product = await fetchProductBySlug(params?.slug as string);
 
+  const products = await fetchProducts();
+
   const categories = await fetchCategories();
 
   return {
-    props: { product, categories },
+    props: { product, categories, products },
     revalidate: 1, // In seconds
   };
 };
 
 export default function ProductPage(props: ProductPageProps) {
-  const { product, categories } = props;
+  const { product, categories, products } = props;
+  console.log('🚀 ~ file: [slug].tsx:46 ~ ProductPage ~ products:', products);
 
   if (!product) {
     return null;
@@ -51,6 +54,7 @@ export default function ProductPage(props: ProductPageProps) {
       initialData={{
         product,
         categories,
+        products,
       }}
     >
       <ProductDetailPagePageComponent />

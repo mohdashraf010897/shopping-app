@@ -13,14 +13,14 @@ export const PageDataProvider = ({ children, initialData = null }: PageDataProvi
   }, [initialData]);
 
   useEffect(() => {
-    if (data) {
+    if (data && JSON.stringify(data) !== JSON.stringify(initialData)) {
       addDataToStore({
         products: data.products,
         categories: data.categories,
         reviews: data.reviews,
       });
     }
-  }, [data, addDataToStore]);
+  }, [data]);
 
   return (
     <PageDataProviderContext.Provider value={{ ...(data ?? {}), setData }}>

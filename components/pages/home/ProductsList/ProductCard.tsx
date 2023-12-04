@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   slug,
   id,
 }) => {
-  const { addToCart, cart } = usePersistorProvider();
+  const { addToCart, cart, toggleCartDrawer } = usePersistorProvider();
 
   return (
     <li
@@ -85,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               if (!cart[id]) {
                 addToCart(id);
               } else {
-                // TODO: do something
+                toggleCartDrawer();
               }
             }}
             role={'button'}

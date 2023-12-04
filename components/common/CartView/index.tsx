@@ -30,47 +30,67 @@ const CartView: React.FC = () => {
     const currentQuantity = cart[productId]?.itemsInCart || 0;
     removeFromCart(productId, currentQuantity);
   };
+
+  const calculateSubtotal = () => {
+    return products.reduce((acc, product) => {
+      const quantity = cart[product.id]?.itemsInCart || 0;
+      return acc + (product.discountedPrice || product.price) * quantity;
+    }, 0);
+  };
+
   return (
     <SideDrawer isOpen={isCartDrawerOpen} onClose={toggleCartDrawer} direction="right">
-      <div className="block p-4 bg-white rounded-lg shadow-md">
+      <div className="block p-4 bg-white rounded-lg ">
         <h2 className="flex justify-start gap-1 items-center mb-4 text-[#5C6C75] font-inter text-[20px] font-semibold leading-8 tracking-tighter ml-2">
           <span>Your cart</span>
           <span>({calculateTotalItemsInCart()} items)</span>
         </h2>
 
-        <div className="overflow-auto">
+        <div className="h-[62vh] overflow-y-scroll">
           <table className="min-w-full">
-            <thead>
-              <tr className="text-left">
-                <th className="p-2">Product</th>
-                <th className="p-2">Details</th>
-                <th className="p-2">Total</th>
-              </tr>
-            </thead>
             <tbody>
-              {products.map(product => (
-                <CartItem
-                  product={product}
-                  key={product.id}
-                  quantity={cart[product.id].itemsInCart}
-                  onQuantityChange={newQuantity => handleQuantityChange(product.id, newQuantity)}
-                  onRemove={() => handleRemove(product.id)}
-                />
-              ))}
+              {products
+                .filter(_ => !!cart[_.id])
+                .map(product => (
+                  <CartItem
+                    product={product}
+                    key={product.id}
+                    quantity={cart[product.id]?.itemsInCart || 0}
+                    onQuantityChange={newQuantity => handleQuantityChange(product.id, newQuantity)}
+                    onRemove={() => handleRemove(product.id)}
+                  />
+                ))}
             </tbody>
           </table>
         </div>
 
-        <div className="mt-4">
-          <div className="flex justify-between items-center mb-2">
+        <div className="mt-4 fixed bottom-0 left-0 right-0 bg-white p-4 shadow-md">
+          <div className="text-black flex justify-between items-center mb-2">
             <span>Subtotal</span>
-            <span>$1908</span>
+            <span>${calculateSubtotal()}</span>
           </div>
           <p className="text-sm text-gray-500">
             Shipping, taxes, and discounts calculated at checkout.
           </p>
-          <div className="flex space-x-2 mt-4">
-            {/* Buttons for 'View my cart' and 'Go to checkout' */}
+          <div className="flex mt-2">
+            <div className="flex justify-between w-[100%] mt-4">
+              <button
+                className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
+                onClick={() => {
+                  // Add logic for 'View my cart' button
+                }}
+              >
+                <span>View my cart</span>
+              </button>
+              <button
+                className="text-white bg-black hover:bg-gray-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
+                onClick={() => {
+                  // Add logic for 'Go to checkout' button
+                }}
+              >
+                <span>Go to checkout</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

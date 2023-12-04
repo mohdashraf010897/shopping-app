@@ -26,9 +26,7 @@ export const fetchProducts = async (): Promise<Product[] | null> => {
 export const fetchProductBySlug = async (slug: string): Promise<Product | null> => {
   try {
     const response = await fetch(`${BASE_URL}/product/${slug}`);
-    console.log('🚀 ~ file: api.ts:30 ~ fetchProductBySlug ~ response:', response);
     const { product } = await response.json();
-    console.log('🚀 ~ file: api.ts:30 ~ fetchProductBySlug ~ product:', product);
     return product;
   } catch (error) {
     console.error(`Error fetching product with id ${slug}:`, error);

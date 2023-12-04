@@ -38,7 +38,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({
       ></div>
 
       <div
-        className={`fixed ${positionStyles[direction]} z-40 transition-transform ${transitionStyles[direction]} bg-white shadow-md w-100 overflow-y-auto pt-12`}
+        className={`fixed ${positionStyles[direction]} z-40 transition-transform ${transitionStyles[direction]} bg-white shadow-md  w-[80%] md:w-[500px] pt-12`}
       >
         {/* Close button */}
         <button

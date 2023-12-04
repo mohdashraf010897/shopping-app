@@ -79,10 +79,11 @@ export const products: Product[] = [
   },
   {
     id: 'prod4',
-    name: 'Coca Cola',
-    slug: 'coca-cola',
+    name: 'Fresh Pineapple',
+    slug: 'fresh-pineapple',
     categoryId: 'cat4',
     price: 45,
+    discountedPrice: 40,
     sale: true,
     rating: 3,
     imageURL:
