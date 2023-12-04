@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({
   return (
     <>
       {showHeader && <Header />}
-      <main className={`${inter.className}`}>{children}</main>
+      <main className={`${inter.className} page`}>{children}</main>
       {showFooter && <Footer categories={categories ?? []} />}
       <CartView />
     </>

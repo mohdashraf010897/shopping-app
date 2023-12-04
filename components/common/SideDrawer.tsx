@@ -10,8 +10,8 @@ const SideDrawer: React.FC<SideDrawerProps> = ({
   direction = 'left',
 }) => {
   const positionStyles = {
-    left: 'top-0 left-0 h-full',
-    right: 'top-0 right-0 h-full',
+    left: 'top-0 left-0 h-[100vh]',
+    right: 'top-0 right-0 h-[100vh]',
     top: 'top-0 left-0 w-full',
     bottom: 'bottom-0 left-0 w-full',
   };
@@ -29,6 +29,10 @@ const SideDrawer: React.FC<SideDrawerProps> = ({
   const overlayTransition = isOpen
     ? 'opacity-50 ease-out duration-1000'
     : 'opacity-0 ease-in duration-1000 hidden';
+
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <>

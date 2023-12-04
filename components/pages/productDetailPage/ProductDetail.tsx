@@ -19,7 +19,7 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
   // Destructure other product properties as needed
 }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addToCart } = usePersistorProvider();
+  const { addToCart, toggleCartDrawer } = usePersistorProvider();
   const addToCartHandler = () => {
     // Implement add to cart functionality
     addToCart(id, quantity);
@@ -97,14 +97,23 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
             </div>
           </div>
 
-          <button
-            className="mt-8 min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out mt-4 text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
-            onClick={addToCartHandler}
-            role={'button'}
-          >
-            <AddIcon color="#fff" />
-            Add to cart
-          </button>
+          <div className="flex gap-4 mt-8">
+            <button
+              className="min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
+              onClick={addToCartHandler}
+              role={'button'}
+            >
+              <AddIcon color="#fff" />
+              Add to cart
+            </button>
+            <button
+              className="min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
+              onClick={toggleCartDrawer}
+              role={'button'}
+            >
+              View Cart
+            </button>
+          </div>
         </div>
         <div className="mt-6 grid items-center grid-cols-2 grid-rows-auto overflow-hidden text-[#5C6C75] text-sm font-inter font-medium capitalize">
           Category:{' '}

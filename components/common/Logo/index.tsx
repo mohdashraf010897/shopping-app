@@ -1,17 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Logo: React.FC = () => {
   return (
     <div>
-      <a href="https://freshcart.madrasthemes.com/gutenberg/">
+      <Link href="/">
         <Image
           src="https://transvelo.github.io/freshcart/assets/images/freshcart-logo.svg"
           alt="FreshCart Logo"
           width={160}
           height={31}
         />
-      </a>
+      </Link>
     </div>
   );
 };
