@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-white px-4 py-8 mt-8">
+    <section className="relative bg-white px-4 py-8 mt-0">
       <div className="relative min-h-[538px] rounded-md overflow-hidden">
         {/* Background Image */}
         <Image
