@@ -5,7 +5,7 @@ import ProductsList from './ProductsList';
 
 const HomePageComponent: React.FC = () => {
   return (
-    <div className="mb-16">
+    <div className="pb-16">
       <HeroSection />
       <FeaturedCategories />
       <ProductsList />
