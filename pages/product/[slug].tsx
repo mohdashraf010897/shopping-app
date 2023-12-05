@@ -1,5 +1,6 @@
 import { PageDataProvider } from '@/components/contextProviders/PageDataProvider';
 import ProductDetailPagePageComponent from '@/components/pages/productDetailPage';
+import Head from '@/components/site/Head';
 import { ProductPageProps } from '@/types/pages/productPage';
 import { fetchCategories, fetchProductBySlug, fetchProducts } from '@/utils/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -56,6 +57,8 @@ export default function ProductPage(props: ProductPageProps) {
         products,
       }}
     >
+      {' '}
+      <Head title={product.name} description={'Buy - ' + product.name} />
       <ProductDetailPagePageComponent />
     </PageDataProvider>
   );

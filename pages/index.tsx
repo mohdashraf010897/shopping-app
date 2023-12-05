@@ -4,6 +4,7 @@ import HomePageComponent from '@/components/pages/home';
 import { HomePageProps } from '@/types/pages/homepage';
 import { GetServerSideProps } from 'next';
 import { PageDataProvider } from '@/components/contextProviders/PageDataProvider';
+import Head from '@/components/site/Head';
 
 function HomePage(props: HomePageProps) {
   return (
@@ -12,6 +13,8 @@ function HomePage(props: HomePageProps) {
         ...props,
       }}
     >
+      {' '}
+      <Head title="Freshcart - Your daily needs a fresh" description="Freshcart - homepage 🚀" />
       <HomePageComponent />
     </PageDataProvider>
   );
