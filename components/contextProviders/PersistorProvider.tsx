@@ -27,7 +27,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
   // Effect to set store from session data
   useEffect(() => {
     setStore(prevData => {
-      const sessionData = sessionStorage.getItem('data');
+      const sessionData = localStorage.getItem('data');
       if (sessionData) {
         const parsedData = JSON.parse(sessionData);
         return { ...prevData, ...parsedData };
@@ -41,7 +41,7 @@ export const PersistorProvider: React.FC<PersistorProviderProps> = ({ children }
     if (initialRender.current) {
       initialRender.current = false;
     } else {
-      sessionStorage.setItem('data', JSON.stringify(store));
+      localStorage.setItem('data', JSON.stringify(store));
     }
   }, [store]);
 
