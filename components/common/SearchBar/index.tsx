@@ -14,7 +14,7 @@ const SearchBar: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative flex items-center animate-pulse flex-grow mr-12 ml-6"
+      className="relative flex items-center animate-pulse flex-grow mr-12 ml-6 lg:flex hidden"
     >
       <input
         style={{ boxShadow: '0 0 2px 0px #0AAD0A', outline: 'none' }}

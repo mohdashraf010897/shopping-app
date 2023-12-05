@@ -97,9 +97,9 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
             </div>
           </div>
 
-          <div className="flex gap-4 mt-8">
+          <div className="flex flex-wrap gap-4 mt-8">
             <button
-              className="min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
+              className="w-full sm:min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out text-white bg-green-500 hover:bg-green-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
               onClick={addToCartHandler}
               role={'button'}
             >
@@ -107,7 +107,7 @@ const ProductDetail: React.FC<Product & { category: string }> = ({
               Add to cart
             </button>
             <button
-              className="min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
+              className="w-full sm:min-w-[190px] rounded-[6px] flex justify-center items-center transition-all duration-300 ease-in-out text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 pl-2 rounded text-sm flex items-center gap-[6px] transition-all duration-300 ease-in-out"
               onClick={toggleCartDrawer}
               role={'button'}
             >

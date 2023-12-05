@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -70,9 +71,9 @@ const Footer: React.FC<FooterProps> = ({ categories: propCategories }) => {
         </div>
 
         {/* Payment Partners and Social Media Links */}
-        <div className="w-full border-t border-gray-600 mt-8 pt-4 flex justify-between">
+        <div className="w-full border-t border-gray-600 mt-8 pt-4 flex flex-col justify-start items-start gap-5 sm:flex-row sm:justify-between">
           {/* Payment Partners */}
-          <div className="flex-1 flex flex-wrap items-center gap-[10px]">
+          <div className="flex-1 flex flex-wrap items-center gap-2 sm:gap-4">
             <h6 className="text-lg font-semibold text-gray-800 mr-4">Payment Partners</h6>
             <Image
               src="https://transvelo.github.io/freshcart/assets/images/amazonpay.svg"
@@ -107,7 +108,7 @@ const Footer: React.FC<FooterProps> = ({ categories: propCategories }) => {
           </div>
 
           {/* Social Media Links */}
-          <div className="flex-1 flex flex-wrap items-center justify-end  gap-[10px]">
+          <div className="flex-1 flex flex-wrap items-center justify-start gap-2 sm:justify-end sm:gap-4">
             <h6 className="text-lg font-semibold text-gray-800 mr-4">Follow us on</h6>
             <Link
               className="rounded-md p-1 hover:bg-green-500 active:bg-green-600"
