@@ -9,6 +9,8 @@ FreshCart is a modern, feature-rich e-commerce application built with Next.js, T
 - **Product Management:** View and manage products in your cart.
 - **Responsive Design:** Enjoy a consistent experience on any device.
 - **Page Transition:** Enjoy smooth transition between routes.
+- **Page Transition:** Enjoy smooth transition between routes.
+- **State Persistence:** Your cart items and user session are saved across tabs refresh for a seamless shopping experience.
 
 ## Getting Started
 
@@ -22,21 +24,13 @@ To set up FreshCart on your local machine, follow these steps:
    ```bash
    npm install
    # or
-   yarn install
-   # or
-   pnpm install
-   # or
-   bun install
+   yarn
    ```
 3. **Start the Development Server**
    ```bash
    npm run dev
    # or
    yarn dev
-   # or
-   pnpm dev
-   # or
-   bun dev
    ```
    Visit `http://localhost:3000` in your browser to view the app.
 
